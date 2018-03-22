@@ -1,0 +1,27 @@
+
+#mainPagePoster{
+	height:100%;
+	width:100%;
+}
+.movieInfo:hover{
+cursor: pointer;
+}
+.display-4{
+	font-size: 30px;
+}
+#fav-title{
+	margin-top:50px;
+	text-align: center;
+}
+.movieInfo:hover{
+	cursor: pointer;
+	opacity: 0.8;
+}
+.modal-dialog{
+	max-width: 700px;
+}
+.modal-body{
+	width:80%;
+	margin-left:10%;
+}
+
