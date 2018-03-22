@@ -1,42 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-    <nav class="navbar navbar-dark bg-dark">
-  <!-- Navbar content -->
-</nav>
-<div class="row">
-<div class="col">
-</div>
-<div class="col-lg-8">
-<div class="jumbotron">
-    <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-dark bg-dark">
+         WELCOME!
+      </nav>
+      <div class="jumbotron">
+         <h1 class="display-4">Welcome</h1>
+         <p class="lead">below you will find a list of your favorite movies.. You can add new, view, or delete at anytime</p>
+         <hr class="my-4">
+         <p>to talk with like-minded members post on our forum! </p>
+         <p class="lead">
+         </p>
+      </div>
+      <div class="row">
+         <div class="col">
+         </div>
+         <div class="col-lg-8">
+            <div class="jumbotron">
+               movies will show up dynamically in this section
+            </div>
+         </div>
+         <div class="col">
+            <div class="jumbotron">
+               <a href="#" button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="searchModal('searchMovies')">search movies</button></a> <br>
+               <br>
+               <button type="button" class="btn btn-warning">post in forum</button>
+            </div>
+         </div>
+         <div class="col"></div>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  ...
+               </div>
+               <div class="modal-search-results">
+               </div>
+               <div class="modal-footer">
+               </div>
+            </div>
+         </div>
+      </div>
 
-</div>
-</div>
-<div class="col">
-</div>
-</div>
+
+<script type= "text/javascript">
+function searchModal(topic) {
+	if (topic === "searchMovies") {
+		$("#exampleModalTitle").html("Movie Search")
+
+		var movieSearch = "<form><div class='form-group'><label for='formGroupExampleInput'>Search for movie</label>";
+		movieSearch += "<input type='text' class='form-control' id='movieSearch' placeholder='Enter movie title'></div><button type='button' class='btn btn-primary movieSearchButton'>search</button></form>";
+
+		$(".modal-body").html(movieSearch);
+	}
+	$(".movieSearchButton").on("click", function () {
+		$(".modal-search-results").empty();
+
+
+		var movieValue = $("#movieSearch").val().trim()
+
+		if (movieValue == "") {
+		} else {
+			searchMovieApi(movieValue);
+		}
+	})
+}
+
+function searchMovieApi(movie) {
+
+	$.ajax({
+		url: "http://www.omdbapi.com/?i=tt3896198&apikey=289af123&s=" + movie,
+		method: "GET"
+	}).done(function (response) {
+		console.log(response.Search);
+
+		for (i = 0; i < response.Search.length; i++) {
+			var list = "<div class='row'><div class='col'></div><div class='col'><img src=" + response.Search[i].Poster + " style='height:200px' 'width:200px'></div><div class='col'></div></div><div class='row'> <div class='col'></div><div class='col-lg-2'>" + response.Search[i].Year + "</div><div class='col'></div></div><div class='row'><div class='col'></div><div class='col-lg-9'> <button class='btn btn-primary btn-lg btn-block moreInfo' data-imdb=" + response.Search[i].imdbID + "  data-info=" + i + ">" + response.Search[i].Title + "</button></div><div class='col'></div></div><br><br>";
+
+			$(".modal-search-results").append(list);
+		}
+
+
+		$(".moreInfo").on("click", function () {
+			var x = $(this).data("imdb");
+			var id = $(this).data("info");
+			var pic = response.Search[id].Poster;
+
+			$.ajax({
+				url: "http://www.omdbapi.com/?i=" + x + "&apikey=289af123",
+				method: "GET"
+			}).done(function (response) {
+				populateInfo(response, pic, id, x);
+
+			})
+		})
+	});
+
+}
+
+function populateInfo(data, pic, id) {
+	$(".modal-search-results").empty()
+
+	var title = "<h1>" + data.Title + "</h1>";
+	$("#exampleModalTitle").html(title)
+
+
+	var movieSearch = "<button type='button' class='btn btn-secondary btn-lg btn-block addFavorite'>";
+	movieSearch += "Add to Favorites</button><br><div class='row'><div class='col'></div><div class='col'>";
+	movieSearch += "<img src=" + pic + "></div><div class='col'></div></div><br><br><h5 class='card-title'>";
+	movieSearch += "Released: </h5> <p class='card-text'>" + data.Released + "</p>";
+	movieSearch += "<br><h5 class='card-title'>Genre: </h5><p class='card-text'>" + data.Genre + "</p>";
+	movieSearch += "<br><h5 class='card-title'> Director: </h5><p class='card-text'>" + data.Director + "</p><br>";
+	movieSearch += "<h5 class='card-title'>Actors: </h5><p class='card-text'>" + data.Actors + "</p><br><h5 class='card-title'>";
+	movieSearch += "Plot: </h5><p class='card-text'>" + data.Plot + "</p>";
+	movieSearch += "<h5 class='card-title'>Box Office: </h5><p class='card-text'>" + data.BoxOffice + "</p><br>";
+	movieSearch += "<h5 class='card-title'>Ratings: </h5><p class='card-text'>IMDB: " + data.imdbRating + "</p>";
+	movieSearch += "<p class='card-text'>Rotten Tomatoes: " + data.Ratings[1].Value + "</p><br>"
+
+
+	$(".modal-body").html(movieSearch);
+
+
+	$(".addFavorite").on("click", function () {
+		$(".addFavorite").css("display", "none");
+		console.log("adding fav")
+		var rt = data.Ratings[1].Value
+		addToFavorites(data, pic, rt)
+	})
+
+}
+
+
+function addToFavorites(data, pic, rt) {
+
+	var favData = {
+		movie_title: data.Title,
+		genre: data.Genre,
+		pic_id: pic,
+		director: data.Director,
+		actors: data.Actors,
+		plot: data.Plot,
+		boxOffice: data.BoxOffice,
+		imdb_rating: data.imdbRating,
+		rt_rating: rt
+	}
+
+
+	console.log(favData);
+
+	$.post("/api/addmovie", favData, function (req, res) {
+
+	})
+}
+</script>
 </body>
 </html>
