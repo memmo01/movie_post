@@ -19,11 +19,18 @@
 	<!-- // this area will have logo of application -->
       <nav class="navbar navbar-dark bg-dark">
          WELCOME!
-	  </nav>
+         <div class="btn-group" role="group" aria-label="Basic example">
+         <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"  onclick='create()'>create account</button>
+              
+         <button class="btn btn-primary" data-toggle='modal' data-target='#exampleModal' onclick='sign()' >sign in</button>
+        
+         </div>
+       <button id="refresh" class="btn btn-danger" onclick='logout()'> Log Out</button>
+      </nav>
 		
 	  <!-- jumbotron will have a personalized message for user logging in -->
       <div class="jumbotron">
-         <h1 class="display-4">Welcome</h1>
+         <h1 class="display-4">Welcome <span id="name"></span></h1>
          <p class="lead">below you will find a list of your favorite movies.. You can add new, view, or delete at anytime</p>
          <hr class="my-4">
          <p>to talk with like-minded members post on our forum! </p>
@@ -43,7 +50,12 @@
             <div class="jumbotron">
                <a href="#" button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="searchModal('searchMovies')">search movies</button></a> <br>
                <br>
-               <button type="button" class="btn btn-warning">post in forum</button>
+               <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"  onclick='sign()'>post in forum</button>
+               <br><br>
+               <button id="refresh" class="btn btn-secondary" onclick='run()'> Refresh List</button>
+               <br><br>
+               
+               <br><br>
             </div>
          </div>
          <div class="col"></div>
