@@ -1,89 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="./css/style.css">
-	</head>
-	<style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- // this area will have logo of application -->
+    <nav class="navbar navbar-dark bg-dark">
 
 
-		</style>
-   <body>
+        <button id="refresh" class="btn btn-danger" onclick='logout()'> Log Out</button>
+    </nav>
 
-	<!-- // this area will have logo of application -->
-      <nav class="navbar navbar-dark bg-dark">
-         WELCOME!
-         <div class="btn-group" role="group" aria-label="Basic example">
-         <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"  onclick='create()'>create account</button>
-              
-         <button class="btn btn-primary" data-toggle='modal' data-target='#exampleModal' onclick='sign()' >sign in</button>
-        
-         </div>
-       <button id="refresh" class="btn btn-danger" onclick='logout()'> Log Out</button>
-      </nav>
-		
-	  <!-- jumbotron will have a personalized message for user logging in -->
-      <div class="jumbotron">
-         <h1 class="display-4">Welcome <span id="name"></span></h1>
-         <p class="lead">below you will find a list of your favorite movies.. You can add new, view, or delete at anytime</p>
-         <hr class="my-4">
-         <p>to talk with like-minded members post on our forum! </p>
-         <p class="lead">
-         </p>
-	  </div>
-		
-	  <!-- area below will list all movies the user has favorited -->
-      <div class="row">
-         <div class="col">
-         </div>
-         <div class="col-lg-8">
-            <div class="jumbotron fav-movie-list">
+    <div class="main-page">
+        <div class='row m-p-welcome'>
+            <div class="col">
             </div>
-         </div>
-         <div class="col">
-            <div class="jumbotron">
-               <a href="#" button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="searchModal('searchMovies')">search movies</button></a> <br>
-               <br>
-               <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"  onclick='sign()'>post in forum</button>
-               <br><br>
-               <button id="refresh" class="btn btn-secondary" onclick='run()'> Refresh List</button>
-               <br><br>
-               
-               <br><br>
+            <div class="col-lg-8">
+                <div class="jumbotron jumbotron-fluid m-p-jumb">
+                    <div class="container">
+                        <h1 class="display-3">Favorite Movie Collection</h1>
+                        <p class="lead">Create a personal list of favorite your movies and instant access to more information about those movies</p>
+                        <p>Communicate with similiar users by posting in a community forum!</p>
+                        <div class='row'>
+                            <div class="col">
+                            </div>
+                            <div class='col-lg-3'>
+                                <div class="btn-group" style='padding-bottom:10%;' role="group" aria-label="Basic example">
+                                    <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" onclick='create()'>create account</button>
+
+                                    <button class="btn btn-primary" data-toggle='modal' data-target='#exampleModal' onclick='sign()'>sign in</button>
+
+                                </div>
+                            </div>
+                            <div class='col'>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-         </div>
-         <div class="col"></div>
-	  </div>
-		
-	  <!-- the modal below will populate displaying more information about movies a user has already favorited or if they are searching for a movie -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
-         <div class="modal-dialog" role="document">
+            <div class="col">
+            </div>
+        </div>
+
+
+
+
+
+        <div class='row r'>
+            <!-- <div class='col-lg-12'> -->
+            <div class='col-lg col-sm-3 col-md-2'>
+                <img src="/images/scarface.jpg" style='width:100%; height:300px'>
+            </div>
+            <div class='col-lg col-sm-3 col-md-2'>
+                <img src="/images/casablanca.jpg" style='width:100%; height:300px'>
+            </div>
+            <div class='col-lg col-sm-3 col-md-2'>
+                <img src="/images/harryP.jpg" style='width:100%; height:300px'>
+            </div>
+            <div class='col-lg col-sm-3 col-md-2'>
+                <img src="/images/MIB.jpg" style='width:100%; height:300px'>
+            </div>
+            <div class='col-lg col-sm-3 col-md-2'>
+                <img src="/images/jaws.jpg" style='width:100%; height:300px'>
+            </div>
+            <div class='col-lg col-sm-3 col-md-2'>
+                <img src="/images/japan.jpg" style='width:100%; height:300px'>
+            </div>
+            <!-- </div>
+            <img src="dracula.jpg" style='height:300px'>
+             <img src="pulpfiction.jpg" style='height:300px; width:170px'>
+             -->
+            <!-- </div> -->
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid logged-in-page">
+        <!-- jumbotron will have a personalized message for user logging in -->
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome <span id="name"></span></h1>
+            <p class="lead">below you will find a list of your favorite movies.. You can add new, view, or delete at anytime</p>
+            <hr class="my-4">
+            <p>to talk with like-minded members post on our forum! </p>
+            <p class="lead">
+            </p>
+        </div>
+
+        <!-- area below will list all movies the user has favorited -->
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-lg-8">
+                <div class="jumbotron fav-movie-list">
+                </div>
+            </div>
+            <div class="col">
+                <div class="jumbotron">
+                    <a href="#" button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="searchModal('searchMovies')">Add Movies</button></a> <br>
+                    <br>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" onclick='sign()'>post in forum</button>
+                    <br><br>
+                    <button id="refresh" class="btn btn-secondary" onclick='run()'> Refresh List</button>
+                    <br><br>
+
+                    <br><br>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <!-- the modal below will populate displaying more information about movies a user has already favorited or if they are searching for a movie -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalTitle">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                   </button>
-               </div>
-               <div class="modal-body">
-                  ...
-               </div>
-               <div class="modal-search-results">
-               </div>
-               <div class="modal-footer">
-               </div>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-search-results">
+                </div>
+                <div class="modal-footer">
+                </div>
             </div>
-         </div>
-      </div>
+        </div>
+    </div>
 
 
-<script type= "text/javascript" src="./js/javascript.js">
-</script>
+    <script type="text/javascript" src="./js/javascript.js">
+    </script>
 </body>
+
 </html>

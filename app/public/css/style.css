@@ -24,4 +24,27 @@ cursor: pointer;
 	width:80%;
 	margin-left:10%;
 }
+.main-page{background-color:black;
+      background-size: cover;
+	  display:block;
+	  height:100%;
+      
+}
+.logged-in-page{
+      display:none;
+}
+.m-p-welcome{
+      background-image:url('../images/background.jpg');
+      background-size: 100% 200%;
+	  background-repeat: no-repeat;
+	  height:100%;
+}
+.m-p-jumb{
+      /* height:100%; */
+      margin-top:50px;
+}
+	.r{
+		height:100%;
+		margin-top:50px;
+	}
 
