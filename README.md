@@ -7,7 +7,16 @@ The Favorite Movie application allows users to have a space where a list of thei
   connect with other users.
 
 
-
+## Technologies Used:
+- HTML
+- CSS
+- JavaScript
+- jQuery
+- MySQL
+- omdb API
+- Sequelize
+- express
+- body-parser
 
 
 
