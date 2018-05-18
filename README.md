@@ -6,8 +6,6 @@ The Favorite Movie application allows users to have a space where a list of thei
   they will have quicker access to this information.  The application will also have an area where posts can be made to 
   connect with other users.
 
-## Try it out
-https://fav-movie-application.herokuapp.com/
 
 ## Technologies Used:
 - HTML
