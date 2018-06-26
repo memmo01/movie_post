@@ -1,9 +1,13 @@
+
+
+
 var userrr = "";
 var useremail = "";
 
 function login() {
     $(".main-page").css("display", "none");
     $(".logged-in-page").css("display", "block");
+    $("body").css("background-color","#04384A")
     run();
 }
 
@@ -245,6 +249,7 @@ function logout() {
     var userrr = ""
     $(".main-page").css("display", "block");
     $(".ff").css("display", "none");
+    $(".body").css("background-color","black")
     window.location.href = "/"
 }
 
@@ -290,4 +295,7 @@ function create() {
             })
         }
     })
+}
+function post(){
+    alert("post is currently under construction")
 }
