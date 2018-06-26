@@ -23,5 +23,9 @@ The Favorite Movie application allows users to have a space where a list of thei
 - In terminal type: npm install
 - Direct browser to local host
 
+## Screenshots
+![](movie_app.JPG)
+
+
 ## Author
 Michael Emmons
