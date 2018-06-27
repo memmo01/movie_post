@@ -33,8 +33,6 @@ The Favorite Movie application allows users to have a space where a list of thei
 ![](./screenshots/movieclick.JPG)
 ### Movie Search Page
 ![](./screenshots/moviesearch.JPG)
-### Personal Favorite Movie Collection
-![](./screenshots/movielist.JPG)
 ### Ability to remove a movie from library
 ![](./screenshots/removeMovie.JPG)
 
