@@ -27,9 +27,9 @@ The Favorite Movie application allows users to have a space where a list of thei
 ### Landing Page
 ![](./screenshots/movie_app.JPG)
 
-### Login Modal
+### View after login
 ![](./screenshots/movieLoggedin.JPG)
-### Landing Page
+### After clicking your favorite movie
 ![](./screenshots/movieclick.JPG)
 ### Movie Search Page
 ![](./screenshots/moviesearch.JPG)
