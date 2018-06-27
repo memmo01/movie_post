@@ -29,6 +29,7 @@ The Favorite Movie application allows users to have a space where a list of thei
 ![](./screenshots/movieclick.JPG)
 ![](./screenshots/moviesearch.JPG)
 ![](./screenshots/movielist.JPG)
+![](./screenshots/removeMovie.JPG)
 
 
 ## Author
