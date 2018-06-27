@@ -24,7 +24,11 @@ The Favorite Movie application allows users to have a space where a list of thei
 - Direct browser to local host
 
 ## Screenshots
-![](movie_app.JPG)
+![](./screenshots/movie_app.JPG)
+![](./screenshots/movieLoggedin.JPG)
+![](./screenshots/movieclick.JPG)
+![](./screenshots/moviesearch.JPG)
+![](./screenshots/movielist.JPG)
 
 
 ## Author
