@@ -1,53 +1,50 @@
-
-body{
-	background-color:black;
+body {
+  background-color: black;
 }
-#mainPagePoster{
-	height:100%;
-	width:100%;
+#mainPagePoster {
+  height: 100%;
+  width: 100%;
 }
-.movieInfo:hover{
-cursor: pointer;
+.movieInfo:hover {
+  cursor: pointer;
 }
-.display-4{
-	font-size: 30px;
+.display-4 {
+  font-size: 30px;
 }
-#fav-title{
-	margin-top:50px;
-	text-align: center;
+#fav-title {
+  margin-top: 50px;
+  text-align: center;
 }
-.movieInfo:hover{
-	cursor: pointer;
-	opacity: 0.8;
+.movieInfo:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
-.modal-dialog{
-	max-width: 700px;
+.modal-dialog {
+  max-width: 700px;
 }
-.modal-body{
-	width:80%;
-	margin-left:10%;
+.modal-body {
+  width: 80%;
+  margin-left: 10%;
 }
-.main-page{background-color:black;
-      background-size: cover;
-	  display:block;
-	  height:100%;
-      
+.main-page {
+  background-color: black;
+  background-size: cover;
+  display: block;
+  height: 100%;
 }
-.logged-in-page{
-      display:none;
+.logged-in-page {
+  display: none;
 }
-.m-p-welcome{
-      background-image:url('../images/background.jpg');
-      background-size: 100% 200%;
-	  background-repeat: no-repeat;
-	  height:100%;
+.m-p-welcome {
+  background-image: url("../images/background.jpg");
+  background-size: 100% 200%;
+  background-repeat: no-repeat;
+  height: 100%;
 }
-.m-p-jumb{
-      /* height:100%; */
-      margin-top:50px;
+.m-p-jumb {
+  margin-top: 50px;
 }
-	.r{
-		height:100%;
-		margin-top:50px;
-	}
-
+.r {
+  height: 100%;
+  margin-top: 50px;
+}
